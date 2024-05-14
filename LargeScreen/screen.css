@@ -1,0 +1,187 @@
+/* Base styles to ensure consistency */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #0b3665;
+}
+
+/* Utility classes for text */
+.text-center {
+    text-align: center;
+}
+
+.text-large {
+    font-size: 2em; /* Large text for important information */
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #0b3665; /* A dark navy blue */
+    color: #ffffff;
+}
+
+.logo {
+    font-size: 3em; /* Large logo text */
+    font-weight: bold;
+}
+
+.date-time {
+    font-size: 2em;
+}
+
+
+/* Main content area */
+main {
+    display: flex;
+    height: calc(100% - 60px); /* Adjust the height based on your header/footer height */
+    color: #333;
+    background-color: #0b3665;
+}
+
+.left-column, .right-column {
+    flex: 1;
+    padding: 2em;
+}
+
+
+/* Video container */
+.video-container {
+    background-color: #000;
+    margin-bottom: 1em;
+}
+
+video {
+    width: 100%; /* Responsive video width */
+    height: 350px; /* Maintain aspect ratio */
+}
+
+/* Running text at the bottom */
+.running-text {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4A90E2;  /* Dark background for contrast */
+    color: white; /* White text for readability */
+    padding: 5px; /* Reduced padding */
+    text-align: center;
+    font-size: 1.2rem; /* Reduced font size */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+
+
+marquee {
+    font-size: 1.5em;
+}
+.next-ticket-details {
+    background-color: #ffffff; /* White background */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-top: 20px; /* Space from the previous elements */
+    padding: 20px; /* Ample padding inside the container */
+    text-align: center; /* Center the text */
+    display: inline-block; /* Fit the content's width */
+    width: auto; /* Automatically size width */
+}
+
+.next-title,
+.ticket-number.next,
+.counter-title.next {
+    font-size: 1.2rem; /* Slightly larger font size for better readability */
+    display: block; /* Each element on a new line */
+    margin: 10px 0; /* Space between elements */
+    color: #333; /* Darker text for contrast against the white background */
+}
+.next-ticket-details {
+    /* ...existing styles... */
+    width: 50%; /* Adjust the width to be a percentage of the .left-column width */
+    max-width: 400px;
+    margin-left: 100px;
+    margin-bottom: 100px; /* Optional: to prevent it from becoming too wide on larger screens */
+    /* ... */
+}
+
+.ticket-number.next {
+    font-size: 3rem; /* Much larger font size for the ticket number */
+    font-weight: bold; /* Bold for emphasis */
+    color: #0047ab; /* Color for visibility */
+}
+
+.counter-title.next {
+    font-size: 2rem; /* Larger but smaller than the ticket number for hierarchy */
+}
+
+
+
+h2 {
+    background-color: #4A90E2;   ; /* A slightly lighter navy blue */
+    color: #ffffff;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    width: 180px;
+    margin-left: 150px;
+}
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    height: 450px;
+}
+
+th, td {
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #FFF;
+}
+
+th {
+    background-color: #fff;
+    color: black;
+}
+
+td {
+    background-color: #4A90E2;
+    color: black;
+    font-size: 5em;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {background-color: #3D3D3F;}
+
+/* Responsive design for large screens */
+@media (min-width: 1920px) {
+    .text-large {
+        font-size: 3em; /* Even larger text for very large displays */
+    }
+
+    .logo {
+        font-size: 4em;
+    }
+
+    .date-time {
+        font-size: 3em;
+    }
+
+    marquee {
+        font-size: 2em;
+    }
+}
+
+/* Ensure that all text scales up for high resolution/very large displays */
+@media (min-resolution: 2dppx) {
+    body {
+        font-size: 125%; /* Increase base font size */
+    }
+}

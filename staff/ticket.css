@@ -1,0 +1,255 @@
+/* Base styles for body and overall layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #0b3665; /* Deep blue background */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px; /* Increased padding for a taller navbar */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+.btn-primary{
+    background-color: #0b3665;
+}
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    background-color: #0b3665;
+}
+
+.nav-left a,
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px; /* Space between links */
+    display: flex;
+    align-items: center;
+    position: relative; /* For positioning pseudo-elements */
+}
+
+.nav-right {
+    margin-left: auto; /* Pushes action items to the right side */
+}
+
+.navbar a:not(.navbar-brand)::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffd700; /* Gold underline effect */
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.navbar a:not(.navbar-brand):hover::after,
+.navbar a:not(.navbar-brand).active::after {
+    width: 100%; /* Underline grows on hover */
+}
+
+.navbar-brand {
+    font-size: 1.75em; /* Larger text for brand */
+    font-weight: bold;
+    margin-right: 30px; /* More space after brand */
+}
+
+.unread-count {
+    background-color: #ff4500;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 0.75em;
+    margin-left: 5px; /* Spacing between icon and badge */
+    position: relative;
+    top: -2px; /* Aligns badge with icon/text */
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px; /* Adjust the right margin as needed */
+}
+
+.profile-pic {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    border: 2px solid #ffffff; /* Optional: white border around the image */
+    margin-bottom: 5px; /* Space between image and name */
+}
+
+.user-name {
+    color: #ffffff;
+    font-size: 0.8em; /* Smaller font size for the name */
+    text-align: center; /* Ensures text is centered under the image */
+}
+
+.icon-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2em; /* Adjust icon size as needed */
+    margin-right: 20px; /* Space between icons */
+}
+
+.unread-count {
+    background-color: #ff4500;
+    border-radius: 50%;
+    color: white;
+    padding: 0.25em 0.5em;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 0.7em;
+    min-width: 1.5em;
+    text-align: center;
+}
+
+/* Ensure that larger counts fit nicely */
+.unread-count:empty::before {
+    content: '0';
+}
+
+/* Hover effect for the icon buttons */
+.icon-button:hover {
+    color: #ffd700; /* Change icon color on hover */
+    text-decoration: none; /* Remove any text decoration */
+}
+
+/* Main content area */
+.main-content {
+    width: 90%; /* Or any percentage or fixed width according to your design needs */
+    margin: 0 auto; /* This centers the container horizontally */
+    padding: 10px; /* Provides internal spacing */
+    background-color: #ffffff; /* Optional: sets a background color */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow for a "box" effect */
+    border-radius: 8px; /* Optional: rounds the corners */
+    margin-top: 5px; 
+}
+
+/* Top bar styling */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.top-bar h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Search bar styling */
+.form-control {
+    width: 300px;
+}
+.text-right {
+    text-align: right;
+}
+
+.wrap {
+    text-align: center; /* Center align the content */
+    margin-bottom: 20px; /* Add some space below the search bar */
+}
+
+.search {
+    display: inline-flex; /* Display the search bar items in a row */
+    background-color: #0b3665; /* Set background color */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.searchTerm {
+    width: 300px; /* Adjust the width as needed */
+    border: none; /* Remove border */
+    padding: 15px; /* Add padding */
+    font-size: 18px; /* Maintain font size */
+}
+
+.searchButton {
+    border: none; /* Remove border */
+    background-color: transparent; /* Make background transparent */
+    cursor: pointer; /* Add pointer cursor */
+    padding: 15px; /* Add padding */
+}
+
+.create-box {
+    display: none;
+    /* Additional styling goes here */
+}
+
+
+/* Table styling */
+#tickets-table {
+    width: 100%;
+    padding: 10px;
+}
+
+#tickets-table th,
+#tickets-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#tickets-table th {
+    background-color: #343a40;
+    color: white;
+}
+
+#tickets-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Button styling */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav-left,
+    .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar a {
+        margin: 10px 0; /* Adds space between stacked links on mobile */
+    }
+
+    .form-control {
+        width: 100%;
+    }
+}

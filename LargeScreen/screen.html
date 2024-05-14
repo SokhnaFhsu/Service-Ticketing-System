@@ -1,0 +1,49 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Information Display</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../LargeScreen/screen.css">
+</head>
+<body>      
+    <main>
+        <div class="left-column">
+            <div class="video-container" id="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SIm3nKfJnFE?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div class="next-ticket-details">
+                <span class="next-title">Next ticket:</span>
+                <span class="ticket-number next">Loading...</span>
+                <span class="counter-title next">Loading...</span>
+            </div>
+        </div>
+
+        <div class="running-text">
+            <marquee>Welcome and thank you for visiting us, Queue numbers may not be called in sequence</marquee>
+        </div>
+        <div class="right-column">
+            <section class="ticket-info">
+                <h2>Now Serving</h2>
+                <table id="now-serving-table">
+                    <thead>
+                        <tr>
+                            <th>Ticket ID</th>
+                            <th>Counter </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <script src="../LargeScreen/screen.js"></script>
+</body>
+</html>

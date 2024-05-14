@@ -1,0 +1,368 @@
+/* Base styles for body and overall layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+
+/* Navbar styles */
+/* Navbar styles */
+.navbar {
+    background-color: #0b3665; /* Deep blue background */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px; /* Increased padding for a taller navbar */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left a {
+  color: white;
+  text-decoration: none;
+  margin-right: 30px; /* Increased margin for more space between nav items */
+  display: flex;
+  align-items: center;
+   /* Larger font size for better visibility */
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left a,
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px; /* Space between links */
+    display: flex;
+    align-items: center;
+    position: relative; /* For positioning pseudo-elements */
+}
+
+.nav-right {
+    margin-left: auto; /* Pushes action items to the right side */
+}
+
+.navbar a:not(.navbar-brand)::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffd700; /* Gold underline effect */
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.dashboard-chart-row {
+    display: flex;
+    justify-content: space-between; /* Aligns children side by side */
+    align-items: flex-start; /* Aligns children at their top edges */
+    margin-bottom: 20px; /* Adds space above the table section */
+}
+
+.dashboard-widgets {
+    flex: 1; /* Gives the widget section flexible space */
+    margin-right: 10px; 
+    margin-bottom: 20px;/* Spacing between widgets and chart */
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.widget {
+    padding: 5px; /* Reduce padding inside each widget if necessary */
+    font-size: 0.9em; /* Reduce font size if the text is too large */
+    text-align: center; /* Optional style for better content alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10px; /* This centers the content vertically within the widget */
+}
+.chart-container {
+    flex: 2; /* Allocates twice as much space to the chart as to the widgets */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .dashboard-chart-row {
+        flex-direction: column; /* Stack widgets and chart vertically on smaller screens */
+    }
+
+    .dashboard-widgets, .chart-container {
+        width: 100%; /* Full width for each section on smaller screens */
+        margin-right: 0; /* Removes right margin on mobile for alignment */
+    }
+}
+
+
+.navbar a:not(.navbar-brand):hover::after,
+.navbar a:not(.navbar-brand).active::after {
+    width: 100%; /* Underline grows on hover */
+}
+
+.navbar-brand {
+    font-size: 1.75em; /* Larger text for brand */
+    font-weight: bold;
+    margin-right: 30px; /* More space after brand */
+}
+
+.unread-count {
+    background-color: #ff4500;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 0.75em;
+    margin-left: 5px; /* Spacing between icon and badge */
+    position: relative;
+    top: -2px; /* Aligns badge with icon/text */
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px; /* Adjust the right margin as needed */
+}
+
+.profile-pic {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    border: 2px solid #ffffff; /* Optional: white border around the image */
+    margin-bottom: 5px; /* Space between image and name */
+}
+
+.user-name {
+    color: #ffffff;
+    font-size: 0.8em; /* Smaller font size for the name */
+    text-align: center; /* Ensures text is centered under the image */
+}
+
+.icon-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2em; /* Adjust icon size as needed */
+    margin-right: 20px; /* Space between icons */
+}
+
+.unread-count {
+    background-color: #ff4500;
+    border-radius: 50%;
+    color: white;
+    padding: 0.25em 0.5em;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 0.7em;
+    min-width: 1.5em;
+    text-align: center;
+}
+
+/* Ensure that larger counts fit nicely */
+.unread-count:empty::before {
+    content: '0';
+}
+
+/* Hover effect for the icon buttons */
+.icon-button:hover {
+    color: #ffd700; /* Change icon color on hover */
+    text-decoration: none; /* Remove any text decoration */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav-left,
+    .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar a {
+        margin: 10px 0; /* Adds space between stacked links on mobile */
+    }
+}
+
+/* Unread notifications badge */
+.unread-count {
+    background-color: #ff4500;
+    color: white;
+    padding: 3px 6px;
+    font-size: 0.75em;
+    border-radius: 50%;
+    position: relative;
+    top: -10px;
+    right: 10px;
+}
+.content-container {
+    width: 90%; /* Or any percentage or fixed width according to your design needs */
+    margin: 0 auto; /* This centers the container horizontally */
+    padding: 10px; /* Provides internal spacing */
+    background-color: #ffffff; /* Optional: sets a background color */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow for a "box" effect */
+    border-radius: 8px; /* Optional: rounds the corners */
+    margin-top: 5px; /* Adds space between the navbar and the container */
+}
+
+/* Styling for the internal elements */
+.dashboard-widgets, .chart-container, .data-tables {
+    margin-bottom: 20px; /* Adds space between content sections */
+}
+
+.row {
+    display: flex;
+     /* Distributes space around widgets evenly */
+    flex-wrap: wrap; /* Allows wrapping of items */
+}
+
+.col {
+    flex: 1 1 50%; /* Allows the columns to flex and take up to 30% space */
+    margin: 10px; /* Adds margin around columns */
+    padding: 10px; /* Internal padding for widgets */
+    background-color: #f4f4f4; /* Background color for widgets */
+    border-radius: 4px; /* Rounds corners of widgets */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .content-container {
+        width: 95%; /* Makes the container wider on smaller screens */
+    }
+    .col {
+        flex: 1 1 100%; /* Makes each widget take full width on small screens */
+    }
+}
+
+/* Main content area */
+.main-content {
+    padding: 20px;
+    margin-top: 60px;
+}
+
+/* Dashboard widgets styling */
+.dashboard-widgets .widget {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.widget-number {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.widget-description {
+    color: #666;
+    font-weight: normal;
+}
+
+/* Chart container */
+.chart-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Data table styling */
+.data-tables table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-tables th,
+.data-tables td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.data-tables th {
+    background-color: #0056b3;
+    color: white;
+}
+
+.data-tables tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Responsive grid for widgets */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.col {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Search bar styling */
+input[type="search"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Link and button hover effects */
+a,
+button {
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+a:hover,
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* Additional responsive adjustments could be added below */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+}

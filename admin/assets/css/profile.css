@@ -1,0 +1,145 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+}
+
+.profile-container {
+    background-color: #ffffff;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+}
+
+.profile-container h2 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.form-group input {
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #dcdcdc;
+    font-size: 14px;
+    color: #34495e;
+}
+
+.form-group input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+button {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Full-width buttons */
+    margin-top: 20px; /* Space above the button */
+}
+
+button:hover {
+    background-color: #2980b9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    background-color: #2471a3;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transform: translateY(2px);
+}
+
+/* Non-editable fields styling */
+input[readonly] {
+    background-color: #ecf0f1;
+    color: #95a5a6;
+    cursor: default;
+}
+
+::placeholder {
+    color: #95a5a6;
+}
+.navbar {
+    background-color: #0b3665; /* Deep blue background */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px; /* Increased padding for a taller navbar */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left a {
+  color: white;
+  text-decoration: none;
+  margin-right: 30px; /* Increased margin for more space between nav items */
+  display: flex;
+  align-items: center;
+   /* Larger font size for better visibility */
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left a,
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px; /* Space between links */
+    display: flex;
+    align-items: center;
+    position: relative; /* For positioning pseudo-elements */
+}
+
+.nav-right {
+    margin-left: auto; /* Pushes action items to the right side */
+}
+
+.navbar a:not(.navbar-brand)::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffd700; /* Gold underline effect */
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}

@@ -1,0 +1,607 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html  {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+#dashboard-header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: .5em;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: .5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button,
+.input-group-btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover,
+.input-group-btn:hover {
+    background-color: #4cae4c;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #0b3665; 
+    color: white; 
+    min-height: 100vh; 
+    width: 250px; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    padding-top: 20px; 
+}
+/* Style for sidebar header, which may contain logo or admin panel title */
+.sidebar-header {
+    padding: 15px;
+    background-color: #092d51; /* Slightly lighter blue for header */
+    text-align: center; /* Center the content */
+}
+
+.sidebar-logo {
+    width: 100px; /* Set logo width */
+    height: auto; /* Adjust height automatically */
+    margin-bottom: 10px; /* Margin below the logo */
+}
+
+/* Style for navigation links within the sidebar */
+.sidebar-nav a {
+    padding: 10px 15px; /* Padding for spacing */
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* White text color for links */
+    display: block; /* Display block to fill the horizontal space */
+    transition: 0.3s; /* Smooth transition for hover effect */
+}
+
+.sidebar-nav a:hover {
+    background-color: #34495E; /* Change background color on hover */
+    color: #AAB7B8; /* Change text color on hover */
+}
+
+/* Main content area needs left padding to stay clear of the sidebar */
+.main-content {
+    padding-left: 250px; /* Padding equal to sidebar width */
+}
+/* Main content adjustment */
+.main-content {
+    padding-left: 250px; /* Same as the width of the sidebar */
+    transition: margin-left .5s; /* Smooth transition for sidebar toggle */
+}
+
+/* Top Bar Styles */
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    background: #fff;
+    border-bottom: 1px solid #eaeaea;
+    position: relative;
+}
+.search-container {
+    flex-grow: 1; /* Allows the search form to take up available space */
+}
+/* Search bar within top bar */
+.top-bar input[type="search"] {
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #dddddd;
+    margin-right: auto; /* Pushes the search bar to the left */
+}
+/* Icons style */
+.top-bar .icons {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar .icons a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 30px; /* Space between icons */
+}
+
+.top-bar .icons a:hover {
+    color: #555555; /* Icon hover state */
+}
+
+/* Adding some padding to the body to account for fixed top bar */
+body {
+    padding-top: 20px; /* Height of the top bar */
+}
+/* Widget styles */
+.dashboard-widgets .row {
+    display: flex;
+    justify-content: space-between; /* Distributes space between the columns */
+    align-items: center; /* Aligns items vertically in the center */
+    margin-bottom: 20px; /* Adds some space below each row */
+}
+
+.dashboard-widgets .col {
+    flex: 1; /* Each colu mn takes equal width */
+    margin: 0 10px; /* Adds horizontal spacing between columns */
+}
+
+.widget {
+    background-color: #f1f1f1; /* Light grey background */
+    padding: 20px; /* Spacing inside each widget */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    text-align: center; /* Center the text inside the widget */
+}
+
+.widget-description {
+    font-size: 18px; /* Larger font for the description */
+    color: #333; /* Dark grey color for text */
+    margin-bottom: 10px; /* Space below the description */
+}
+
+.widget-number {
+    font-size: 26px; /* Larger font size for numbers */
+    font-weight: bold; /* Makes the numbers bold */
+    color: #007BFF; /* Blue color for the numbers */
+}
+.chart-container {
+    width: 95%; /* Increased width to make the chart bigger */
+    height: 500px; /* Increased height for better visibility */
+    margin: 30px auto; /* Larger margin to handle the increased size gracefully */
+    padding: 20px; /* Increased padding for better layout */
+    background-color: #ffffff; /* White background for the chart area */
+    border-radius: 10px; /* Slightly larger rounded corners */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Slightly heavier shadow for added depth */
+    border: 1px solid #e1e1e1; /* Light grey border */
+}
+
+/* Enhanced responsiveness for larger displays and adjustments for smaller ones */
+@media (max-width: 1024px) {
+    .chart-container {
+        width: 98%; /* Even wider on smaller screens than before */
+        height: 400px; /* Adjusted height for smaller displays */
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        width: 100%; /* Full width on very small devices */
+        height: 300px; /* Reduced height to fit small screens */
+    }
+}
+
+
+/* Data table styles */
+.data-tables table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.data-tables th, .data-tables td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.data-tables th {
+    background-color: #f4f4f4;
+}
+
+/* Analytics charts styles */
+.analytics-charts {
+    margin-top: 40px;
+}
+
+.notifications-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.notifications-list {
+    list-style: none;
+    padding: 0;
+}
+
+.notifications-list li {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.notifications-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+
+/* Message Sidebar Styling */
+.message-sidebar {
+    background-color: #2d5d8d; 
+    color: white;
+    position: fixed;
+    min-height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 20px;
+    z-index: 2;
+    
+}
+
+.message-sidebar-header {
+    padding: 15px;
+    background-color: #092d51;
+    text-align: center;
+}
+
+.message-sidebar a {
+    display: block;
+    padding: 10px;
+    color: white; /* Link color */
+    text-decoration: none; /* No underline */
+    transition: background 0.3s; /* Smooth background transition */
+}
+.message-sidebar-nav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.message-sidebar-nav a:hover {
+    background-color: #34495E;
+    color: #AAB7B8;
+}
+
+/* Ensuring the main content is not overlapped by the sidebar */
+#message-main-content {
+    margin-left: 250px; /* This should match the width of the sidebar */
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .message-sidebar {
+        position: relative; /* Makes the sidebar flow naturally on smaller screens */
+        width: 100%;
+        height: auto;
+    }
+    #message-main-content {
+        margin-left: 0; /* Removes margin on smaller screens for full-width content */
+    }
+}
+
+/* Compose Section Style */
+#compose-section {
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the section */
+    max-width: 600px; /* Maximum width of the form */
+    margin: 40px auto; /* Center the form on the page with margin */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#compose-section h2 {
+    margin-bottom: 20px; /* Space below the header */
+    color: #333; /* Dark grey color for the text */
+    font-size: 1.5em; /* Slightly larger font size */
+}
+
+/* Form Group Style */
+.form-group {
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+.form-group label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below the label */
+    color: #333; /* Dark grey color for the text */
+    font-size: 1em; /* Standard font size */
+}
+
+/* Input and Textarea Style */
+.form-group input[type="email"],
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%; /* Full width of the parent */
+    padding: 10px; /* Padding inside the input/textarea for space */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Slightly rounded borders for the input/textarea */
+    font-size: 1em; /* Standard font size */
+}
+
+.form-group textarea {
+    height: 150px; /* Height of the textarea */
+    resize: vertical; /* Allows the user to resize the textarea vertically */
+}
+
+/* Button Style */
+#compose-form button {
+    padding: 10px 20px; /* Padding inside the button for space */
+    background-color: #0056b3; /* Green background color */
+    color: #ffffff; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Slightly rounded corners for the button */
+    cursor: pointer; /* Cursor to indicate it's clickable */
+    font-size: 1em; /* Standard font size */
+    transition: background-color 0.2s; /* Transition for hover effect */
+}
+
+#compose-form button:hover {
+    background-color: #007bff; /* Slightly darker green on hover */
+}
+
+
+/* Style for the login container */
+.login-container {
+    width: 350px;
+    margin: 50px auto; /* Added margin-top and margin-bottom */
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+/* Style for the form */
+.login-container form {
+    margin-top: 20px;
+}
+
+/* Style for form labels */
+.login-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style for form inputs */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style for error messages */
+.login-container .error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Style for submit button */
+.login-container input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Style for submit button on hover */
+.login-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style for invalid form inputs */
+.login-container input.is-invalid {
+    border-color: red;
+}
+
+.messages-list {
+    width: 800px;
+     /* Added margin-top and margin-bottom */
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 40px auto; 
+}
+
+.message-item {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+#main-content {
+    margin-left: 300px; /* Same as the sidebar's width */
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 20px; /* Optional for some spacing from the top */
+}
+.message-item h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.message-item p {
+    color: #666;
+    margin: 5px 0 10px;
+    font-size: 14px;
+}
+
+/* Date and recipient styling */
+.message-item .message-date,
+.message-item .message-recipient {
+    font-style: italic;
+    font-size: 12px;
+}
+
+/* Enhance readability for the message preview */
+.message-item .message-preview {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+/* Style for 'Read More' link */
+.message-item a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.message-item a:hover {
+    text-decoration: underline;
+}
+
+#main-content .content-section {
+    max-width: 800px; /* Or whatever max-width you prefer */
+    margin: 0 auto; /* This centers the content section */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: #ffffff;
+}
+
+
+.welcome-section {
+    text-align: center; /* Center everything in the welcome section */
+    padding: 40px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px; /* Space between welcome section and the rest of the content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section .welcome-image {
+    max-width: 100%; /* Make sure it is responsive */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.welcome-section h1 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.welcome-section p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.quick-stats {
+    background: #f4f7f6;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.quick-stats span {
+    font-size: 16px;
+    color: #333;
+}
+
+
+#tickets-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tickets-table th,
+#tickets-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#tickets-table th {
+    background-color: #f4f7f6;
+}
+
+#tickets-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#tickets-table tr:hover {
+    background-color: #e2e2e2;
+}
+
+/* Add any additional styles as needed */
+
+#manage-employees-page .table {
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+#manage-employees-page .table th {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+#manage-employees-page .table tr:hover {
+    background-color: #f2f2f2;
+}
+
+/*#manage-employees-page .action-buttons a,
+#manage-employees-page .action-buttons button {
+    /* Action buttons styling */

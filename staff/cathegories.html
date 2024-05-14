@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard - Service Ticketing System</title>
+    <link rel="stylesheet" href="../staff/staff.css">
+    <script src="../staff/staff.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-custom">
+        
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+        
+    </header>
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../staff/staff.html"><i class="fas fa-home"></i> Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="#ticketSubMenu" data-toggle="collapse" aria-expanded="false"><i class="fas fa-ticket-alt"></i> Tickets</a>
+                            <ul class="collapse list-unstyled" id="ticketSubMenu">
+                                <li class="nav-item"><a class="nav-link" href="../staff/cathegories.html">Cathegories</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../staff/Services.html">Services</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-user-check"></i> Assigned to Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-users"></i> Assigned to Others</a>
+                        </li>
+                        <!-- Tickets Dropdown -->
+                        
+                    </ul>
+                </div>
+            </nav>
+        <main>
+
+            <div class="main-content">
+                <div class="container-fluid">
+                    <div class="manage-header">
+                        <h1>Ticket Categories</h1>
+                    
+                    </div>
+                    
+                    <button id="btn-add" class="btn-add">Add New Category</button>
+                    <button id="btn-disable" class="btn-disable">Disable</button>
+                   <button id="btn-enable" class="btn-enable">Enable</button>
+</div>
+            <br>
+                    <div class="categories-table">
+                        <table id="categoriesTable">
+                            <thead>
+                                <tr>
+                                    <th></th> <!-- For checkboxes -->
+                                    <th>CATEGORY</th>
+                                    <th>SERVICE</th>
+                                    <th>STATUS</th>
+                                    <th>TYPE</th>
+                                    <th>PRIORITY</th>
+                                   
+                                    <th>LAST UPDATED</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Sample category data -->
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>Cat 1</td>
+                                    <td>1</td>
+                                    <td>Active</td>
+                                    <td>Public</td>
+                                    <td>High</td>
+                                    
+                                    <td>2024-04-05</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>Cat 1</td>
+                                    <td>2</td>
+                                    <td>Investigating</td>
+                                    <td>Internal</td>
+                                    <td>Medium</td>
+                                    
+                                    <td>2024-04-04</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>Cat 1</td>
+                                    <td>1</td>
+                                    <td>Resolved</td>
+                                    <td>Public</td>
+                                    <td>Urgent</td>
+                                    
+                                    <td>2024-04-03</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>Cat 1</td>
+                                    <td>3</td>
+                                    <td>Planned</td>
+                                    <td>Internal</td>
+                                    <td>Low</td>
+                                    
+                                    <td>2024-04-02</td>
+                                </tr>
+
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <script src="../staff/staff.js"></script>
+            
+                    <div class="pagination">
+                        <!-- Pagination controls -->
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                // JavaScript for enabling, disabling, deleting categories,
+                // and other dynamic page actions goes here.
+            </script>
+            
+            </body>
+            </html>
